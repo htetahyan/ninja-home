@@ -179,11 +179,48 @@ const ApproachSection = () => {
 };
 
 
-const PassionateSection = () => {
-useLayoutEffect(()=>{})
+  
+const images = [
+    {
+      src: "https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c1677ce47c0_Tile__Man-p-500.png",
+      alt: "Team member 1",
+    },
+    {
+      src: "https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cf161ce47c1_Tile__Woman-p-500.png",
+      alt: "Team member 2",
+    },
+    {
+      src: "https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c141ace47c2_Tile__Man%25202-p-500.png",
+      alt: "Team member 3",
+    },
+  ];
+  
+  const colorBlocks = ["bg-red-400", "bg-rose-300", "bg-yellow-400"];
+  
+  const ImageTile = ({ src, alt, className, width, height }:any) => (
+    <div className={`absolute ${className} w-24 h-24 md:w-28 md:h-28 lg:w-48 lg:h-48 rounded-xl bg-gray-200 shadow-md`}>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="object-cover w-full h-full rounded-xl"
+      />
+    </div>
+  );
+  
+  const GraphicElement = ({ className, innerClass }:any) => (
+    <div className={`absolute ${className} w-24 h-24 md:w-32 md:h-32 flex items-center justify-center rounded-xl shadow-md`}>
+      <div className={`w-12 h-12 ${innerClass}`}></div>
+    </div>
+  );
+  
+  const PassionateSection = () => {
+    useLayoutEffect(() => {}, []);
+  
     return (
       <div className="w-full bg-gray-50 py-14 md:py-20 lg:py-24">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
             <h1 className="text-5xl font-serif mb-8">
@@ -193,81 +230,56 @@ useLayoutEffect(()=>{})
               Our people-first culture attracts and retains top talent.
             </h2>
             <p className="text-gray-700 mb-8">
-              For nearly a decade, we've fostered the growth, wellbeing, and career development of our team members — and that's earned us industry-high talent retention rates.
+              For nearly a decade, we've fostered the growth, well-being, and
+              career development of our team members — and that's earned us
+              industry-high talent retention rates.
             </p>
             <button className="bg-green-900 text-white px-6 py-3 rounded-full w-fit hover:bg-green-800 transition-colors">
               Read our story
             </button>
           </div>
   
-          {/* Right Grid */}
-          <div className="relative w-full aspect-square">
-            {/* Top row */}
-            <div className="absolute top-0 left-0 w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-200">
-              <div className="relative w-full h-full">
-                <Image 
-                  src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c1677ce47c0_Tile__Man-p-500.png"
-                  alt="Team member 1"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-            </div>
-            
-            <div className="absolute top-0 left-1/3 ml-4 w-1/3 aspect-square rounded-2xl bg-rose-100">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-16 h-16 bg-red-400 rounded-full"></div>
-              </div>
-            </div>
-  
-            <div className="absolute top-0 right-0 w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-200">
-              <div className="relative w-full h-full">
-                <Image 
-                  src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cf161ce47c1_Tile__Woman-p-500.png"
-                  alt="Team member 2"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-            </div>
-  
-            {/* Middle row */}
-            <div className="absolute top-1/3 mt-4 left-0 w-1/3 aspect-square rounded-2xl bg-rose-100">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-16 h-16 bg-rose-300"></div>
-              </div>
-            </div>
-  
-            <div className="absolute top-1/3 mt-4 left-1/3 ml-4 w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-200">
-              <div className="relative w-full h-full">
-                <Image 
-                  src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c141ace47c2_Tile__Man%25202-p-500.png"
-                  alt="Team member 3"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-            </div>
-  
-            <div className="absolute top-1/3 mt-4 right-0 w-1/3 aspect-square rounded-2xl bg-rose-100">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-16 h-16 bg-yellow-400"></div>
-              </div>
-            </div>
+          {/* Right Layout - Overlapping Tiles */}
+          <div className="relative mt-10 md:mt-2 w-[300px] md:w-[400px] md:h-[300px] lg:w-[600px] h-[280px] lg:h-[350px]">
+            <ImageTile
+              src={images[0].src}
+              alt={images[0].alt}
+              className="top-0 left-0 "
+              width={100}
+              height={100}
+            />
+            <ImageTile
+              src={images[1].src}
+              alt={images[1].alt}
+              className="top-[-10px] right-0 w-28 h-28 "
+              width={110}
+              height={110}
+            />
+            <GraphicElement className="top-[60px] left-[35%] bg-rose-100" innerClass="bg-red-400 rounded-full" />
+            <GraphicElement className="bottom-0 left-0 bg-rose-100" innerClass="bg-red-500" />
+            <ImageTile
+              src={images[2].src}
+              alt={images[2].alt}
+              className="bottom-[-10px] right-[20%] w-28 h-28 "
+              width={110}
+              height={110}
+            />
+            <GraphicElement className="bottom-0 right-0 bg-yellow-100" innerClass="w-12 h-16 bg-yellow-500" />
           </div>
         </div>
       </div>
     );
   };
+  
+  
+
+  
   const CareerSection = () => {
     return (
       <div className="w-full bg-white py-10 md:py-16 lg:py-24">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 px-6">
           {/* Left side with images */}
-          <div className="relative">
+          <div className="relative  row-start-2 lg:row-start-1">
             {/* Main image */}
             <div className="relative w-full lg:w-2/3 aspect-square rounded-2xl overflow-hidden">
               <Image 
@@ -281,9 +293,14 @@ useLayoutEffect(()=>{})
             </div>
             
             {/* Decorative icon overlay */}
-            <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-2xl bg-rose-100 flex items-center justify-center">
-              <div className="w-20 h-20 bg-red-400">
-                {/* Icon placeholder */}
+            <div className="absolute bottom-16 left-10 w-24 h-24 rounded-2xl bg-rose-100 flex items-center justify-center">
+              <div className="w-20 h-20 bg-red-400 relative">
+              <Image src='https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c34dace47c3_Tile%2520Illustrations__Document%25202-p-500.png'
+              alt='Document Illustration'
+              fill
+              className='object-contain'
+              sizes="(max-width: 768px) 100vw, 50vw"
+              />
               </div>
             </div>
           </div>

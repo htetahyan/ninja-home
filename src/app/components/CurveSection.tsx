@@ -145,8 +145,8 @@ const PlantSection=()=>{
         }
     }, []);
     return(
-        <div ref={plantRef} className='grid lg:grid-cols-2 mt-10 h-fit w-full py-10  '>
-            <div className='w-full h-fit  flex flex-col gap-10'>
+        <div ref={plantRef} className='grid lg:grid-cols-2 mt-6 lg:mt-10 relative h-fit w-full py-10  gap-5 lg:gap-10  '>
+            <div className='w-full h-fit  flex flex-col gap-5 lg:gap-10'>
                 <h1 className='md:text-5xl text-3xl text-start font-bold'>
                 Don’t grow it alone
 
@@ -158,6 +158,7 @@ const PlantSection=()=>{
             </div>
             <Image width ={100} height={100} className=' row-start-1 md:col-start-2' src='https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c4794ce4765_Illustration%3DPlant%201.svg'
             alt=''/>
+            <div className='absolute w-full h-0.5 bg-gray-300 bottom-0 '/>
         </div>
     )
 }
@@ -182,7 +183,7 @@ const ServiceSection = () => {
         }
     }, []);
     return (
-        <div ref={serviceRef} className="w-full py-10">
+        <div ref={serviceRef} className="w-full py-6 lg:py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div key={index} className="bg-white py-6 lg:px-6 rounded-lg shadow-md flex flex-col justify-between">
@@ -226,7 +227,7 @@ const CarouselSection = () => {
 
     const testimonials = [
         {
-            quote: "SupportNinja is really responsive and flexible based on our needs. But what we’re really, really happy about is the Ninjas and their commitment to the brand. They’re like an extension of our team!",
+            quote: "SupportNinja is really responsive and flexible based on our needs. But what we’re really, really happy about is the Ninjas and their commitment to the brand.",
             author: "Sudip Dasgupta",
             position: "Head of Customer Experience, Product Madness",
         },
@@ -273,15 +274,15 @@ const CarouselSection = () => {
         <div ref={carouselRef} className='w-full h-fit grid gap-5'>
             <section className="w-full py-10 flex flex-col items-center">
                 <h2 className="text-3xl font-bold mb-6">Why our clients stick with us</h2>
-                <div className='w-full flex flex-col justify-between bg-[#f5e7e0] py-8 md:py-8 p-6 rounded-lg h-[50vh]'>
+                <div className='w-full flex flex-col justify-between items-center  bg-[#f5e7e0] py-8 md:py-8 p-6 rounded-lg h-[50vh]'>
                     <div className="w-full flex items-center relative max-w-3xl text-center">
-                        <div ref={containerRef} className='w-full h-fit flex flex-col justify-between items-center'>
-                            <p className="text-xl italic mb-4">"{testimonials[currentIndex].quote}"</p>
-                            <p className="font-semibold">{testimonials[currentIndex].author}</p>
-                            <p className="text-sm text-gray-600">{testimonials[currentIndex].position}</p>
+                        <div ref={containerRef} className='w-full  flex flex-col justify-between h-fit md:h-2/3 items-center'>
+                            <p className="text-xl md:text-3xl italic mb-4">"{testimonials[currentIndex].quote}"</p>
+                            <p className="font-semibold md:text-xl ">{testimonials[currentIndex].author}</p>
+                            <p className="text-sm md:text-lg text-gray-600">{testimonials[currentIndex].position}</p>
                         </div>
                     </div>
-                    <div className="flex mt-4 mx-auto bottom-5 right-5 bg-[#2d2d2d] w-fit p-2 rounded-full">
+                    <div className="flex mt-4 mx-auto lg:absolute bottom-16 right-5 bg-[#2d2d2d] w-fit p-2 rounded-full">
                         <button onClick={handlePrev} className="p-2 bg-[#2d2d2d] text-white border-r-2">←</button>
                         <button onClick={handleNext} className="p-2 bg-[#2d2d2d] text-white">→</button>
                     </div>
