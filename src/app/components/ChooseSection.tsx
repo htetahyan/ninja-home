@@ -1,23 +1,28 @@
 'use client'
-import { ArrowBigRight, ArrowRight } from 'lucide-react'
+import {  ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import gsap from "gsap";
 import React, { useLayoutEffect, useRef, useState } from 'react'
-
+import cxImage from '../../../public/672cd9b56f4a3c4346ff88b7_6728efd16a3b5a8ca8f2a32e_Characer Illustration Single__Customer-Experience_Square_Filled.svg'
+import csImage from '../../../public/cs.webp'
+import dpImage from '../../../public/dp.webp'
+import cmImage from '../../../public/cm.webp'
+import faImage from '../../../public/fa.webp'
+import tsImage from '../../../public/ts.webp'
 const items = [
-    {name:'Customer Experience',image:'https://cdn.prod.website-files.com/64149f79022d0c3ed8ce46e9/672cd9b56f4a3c4346ff88b7_6728efd16a3b5a8ca8f2a32e_Characer%20Illustration%20Single__Customer-Experience_Square_Filled.svg',
+    {name:'Customer Experience',image:cxImage,
     },
     {name:'Customer Support',
-        image:'https://cdn.prod.website-files.com/64149f79022d0c3ed8ce46e9/672cd9b56f4a3c4346ff88b7_6728efd16a3b5a8ca8f2a32e_Characer%20Illustration%20Single__Customer-Experience_Square_Filled.svg',
+        image:csImage,
     }, {name:'Technical Customer Support',
-        image:'https://cdn.prod.website-files.com/64149f79022d0c3ed8ce46e9/672cd9b56f4a3c4346ff88b7_6728efd16a3b5a8ca8f2a32e_Characer%20Illustration%20Single__Customer-Experience_Square_Filled.svg',
+        image:tsImage,
     }, {name:'Content Moderation',
-        image:'https://cdn.prod.website-files.com/64149f79022d0c3ed8ce46e9/672cd9b56f4a3c4346ff88b7_6728efd16a3b5a8ca8f2a32e_Characer%20Illustration%20Single__Customer-Experience_Square_Filled.svg',
+        image:cmImage,
     }, {name:'Data Processing',
-        image:'https://cdn.prod.website-files.com/64149f79022d0c3ed8ce46e9/672cd9b56f4a3c4346ff88b7_6728efd16a3b5a8ca8f2a32e_Characer%20Illustration%20Single__Customer-Experience_Square_Filled.svg',
+        image:dpImage,
     },
 {name:'Finance & Accounting',      
-      image:'https://cdn.prod.website-files.com/64149f79022d0c3ed8ce46e9/672cd9b56f4a3c4346ff88b7_6728efd16a3b5a8ca8f2a32e_Characer%20Illustration%20Single__Customer-Experience_Square_Filled.svg',
+      image:faImage,
 }
 
 
@@ -82,14 +87,15 @@ Choose as many as you need.
 </h4></div>
 <div className='w-full grid grid-cols-1 lg:grid-cols-6 gap-6 place-items-center '>
     {items.map((item)=>(
-        <div key={item.name} className='w-full bg-white p-4  lg:h-[30vh] flex lg:flex-col lg:justify-center items-center'>
-            <Image src={item.image} alt={item.name} width={100} height={150} sizes='1vw' className=''/>
-            <p className='text-center font-semibold'>{item.name}</p>
+        <div key={item.name} className='w-full relative bg-white p-4  lg:h-[30vh] flex lg:flex-col lg:justify-center items-center'>
+            <div className='w-2/3 h-2/3 relative'>
+            <Image priority src={item.image} className='h-full w-auto object-contain' alt={item.name} width={200} height={300} />
+           </div> <p className='text-center font-semibold'>{item.name}</p>
         </div>
     ))}
 </div>
 <div className='w-full flex gap-6 justify-center'>
-<button ref={buttonRef} className='w-full px-2 lg:max-w-[13vw] flex items-center justify-between  bg-[#ee4b4a] hover:bg-black text-white p-2 text-2xl font-bold rounded-full '>Get Started
+<button ref={buttonRef} className='w-full px-2  lg:max-w-[20vw] flex items-center justify-between  bg-[#ee4b4a] hover:bg-black text-white p-2 text-2xl font-bold rounded-full '>Get Started
   <div className='p-4 bg-white rounded-full flex items-center justify-center relative overflow-hidden'> <ArrowRight ref={arrowRef} className='text-[#ee4b4a]' /></div> 
 </button>
 </div>
