@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 h-screen md:h-[70vh] lg:h-screen flex flex-col justify-between py-5 px-[3vw] md:px-[10vw]">
+    <footer className="bg-gray-200 h-screen md:h-[90vh] lg:h-screen flex flex-col justify-between py-5 px-[3vw] md:px-[10vw]">
       <div className='w-full flex flex-col h-1/5 relative justify-between  mb-4'>
        <div className='w-full flex justify-between items-center'> <Image src={Logo} width={200} height={100} className="h-8 w-auto mb-4 lg:mb-0" alt=''/>
         <Link 
