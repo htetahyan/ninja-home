@@ -13,6 +13,7 @@ import {
   Menu, 
   X, 
   ChevronRight, 
+  ChevronDown,
   Building2, 
   Briefcase, 
   BookOpen
@@ -97,36 +98,31 @@ const NavLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, 
   </Link>
 )
 
-const DropdownButton: React.FC<{ title: string; onClick?: () => void }> = ({ title, onClick }) => (
-  <button className="flex items-center gap-1 hover:text-gray-600" onClick={onClick}>
-    {title}
-    <ChevronRight className="w-4 h-4" />
-  </button>
-)
+const DropdownContent = ({ items }: { items: { title: string; href: string }[] }) => {
+  return (
+    <div className="py-4 px-6 min-w-[280px] bg-white rounded-2xl shadow-lg">
+      {items.map((item, index) => (
+        <a
+          key={index}
+          href={item.href}
+          className="flex items-center gap-3 py-2.5 hover:text-blue-600 transition-colors"
+        >
+          {item.title}
+          <ChevronRight className="w-4 h-4 ml-auto" />
+        </a>
+      ))}
+    </div>
+  )
+}
 
-const DropdownContent: React.FC<{ items: NavItem[]; className?: string }> = ({ items, className = "" }) => (
-  <div className={`p-4 grid gap-3 ${className}`}>
-    {items.map((item, index) => (
-      <Link 
-        key={index}
-        href={item.href || '#'} 
-        className="flex items-start gap-3 hover:bg-gray-50 p-2 rounded-lg"
-      >
-        {item.icon && (
-          <div className="p-2 bg-gray-100 rounded-lg">
-            {item.icon}
-          </div>
-        )}
-        <div>
-          <h4 className="font-medium">{item.title}</h4>
-          {item.description && (
-            <p className="text-sm text-gray-600">{item.description}</p>
-          )}
-        </div>
-      </Link>
-    ))}
-  </div>
-)
+const DropdownButton = ({ title }: { title: string }) => {
+  return (
+    <button className="flex items-center gap-1 py-2 hover:text-blue-600 transition-colors">
+      {title}
+      <ChevronDown className="w-4 h-4" />
+    </button>
+  )
+}
 
 const DesktopNav: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null)
@@ -159,8 +155,8 @@ const DesktopNav: React.FC = () => {
       {Object.entries(NAV_ITEMS).map(([key, items]) => (
         <div key={key} className="relative group">
           <DropdownButton title={key.charAt(0).toUpperCase() + key.slice(1)} />
-          <div className="absolute top-full left-0 mt-2 w-fit bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <DropdownContent items={items} />
+          <div className="absolute top-full left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+            <DropdownContent items={items.map(item => ({ title: item.title, href: item.href || '#' }))} />
           </div>
         </div>
       ))}
