@@ -156,7 +156,7 @@ const PlantSection=()=>{
                 </h2>
                 <h2 className='md:text-xl text-lg '>Your dedicated new team members will become experts in your world — your customers, your tech, your data, your systems — so they can expand on what you’ve built.</h2>
             </div>
-            <Image width ={100} height={100} className=' row-start-1 md:col-start-2' src='https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c4794ce4765_Illustration%3DPlant%201.svg'
+            <Image width ={100} height={100} className=' row-start-1 lg:place-self-center md:col-start-2' src='https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c4794ce4765_Illustration%3DPlant%201.svg'
             alt=''/>
             <div className='absolute w-full h-0.5 bg-gray-300 bottom-0 '/>
         </div>
