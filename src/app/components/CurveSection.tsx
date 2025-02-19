@@ -2,38 +2,44 @@
 
 import Image from 'next/image'
 import React, { useLayoutEffect, useRef } from 'react'
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen, Building2, Check, CircleDollarSign, Computer, Settings } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 const services = [
   {
     title: 'Customer Support',
+    icon:Building2,
     description: 'Transform every interaction into a positive experience with customer-centric support that scales as you grow.',
     link: 'Explore Customer Support',
   },
   {
     title: 'Customer Experience',
+    icon: Check,
     description: 'Enhance every stage of your customer journey and scale confidently – from a single touchpoint to the entire lifecycle.',
     link: 'Explore Customer Experience',
   },
   {
     title: 'Technical Customer Support',
+    icon:Computer,
     description: 'Outsource dedicated experts on your business to answer customer questions.',
     link: 'Explore Technical Customer Support',
   },
   {
     title: 'Content Moderation',
+    icon:BookOpen,
     description: 'Build a thriving online presence with a team specially trained to uphold your community standards.',
     link: 'Explore Content Moderation',
   },
   {
     title: 'Data Processing',
+    icon:Settings,
     description: 'Receive analyzed data, specific to how you need it interpreted and presented.',
     link: 'Explore Data Processing',
   },
   {
     title: 'Finance & Accounting',
+    icon:CircleDollarSign,
     description: 'Streamline your financial operations with expert accounting and bookkeeping services.',
     link: 'Explore Finance & Accounting',
   },
@@ -180,6 +186,7 @@ const ServiceSection = () => {
         {services.map((service, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between">
             <div>
+            <service.icon className='text-md mb-2'/>
               <h3 className="text-xl font-bold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
             </div>

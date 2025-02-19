@@ -6,16 +6,16 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 const SecondCurveSection = () => {
   return (
-    <div className="relative bg-[#bfc1b9] h-fit mt-[-7px] ">
+    <div className="relative bg-[#bfc1b9] h-fit w-full  ">
       {/* Top curve connection */}
-      <div className="w-full absolute -top-2 lg:-top-10 left-0">
+      <div className="w-full absolute -top-3 lg:-top-10 left-0">
         <Image
           alt="Curve Connector"
           src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c7976ce4795_Section%20Curve%2002.svg"
           width={1920}
           height={500}
           
-          className="w-full object-cover"
+          className="w-full h-auto object-contain"
         />
       </div>
 
