@@ -130,34 +130,32 @@ const DropdownContent: React.FC<{ items: NavItem[]; className?: string }> = ({ i
 
 const DesktopNav: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null)
-useLayoutEffect(() => {
-  if (!navRef.current) return
   
-  const ctx = gsap.context(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: navRef.current,
-        start: "top +=500px",
-        end: "bottom +=800px",
-        scrub: true
-      }
-    })
-    tl.to(navRef.current,
-     {background:'white',
-    duration:0.5,
-    outline:'0.4px solid gray',
-    ease:'ease-in-out'
-     }
-    )
+  useLayoutEffect(() => {
+    if (!navRef.current) return
     
-   
-  })
-  return () => {
-    ctx.revert()
-  }
-})
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: document.documentElement,
+        start: "top -=100px",
+        end: "+=200px",
+        onUpdate: (self) => {
+          gsap.to(navRef.current, {
+            backgroundColor: self.progress ? "white" : "transparent",
+            boxShadow: self.progress ? "0 2px 4px rgba(0,0,0,0.1)" : "none",
+            outline: self.progress ? "0.4px solid rgba(0,0,0,0.1)" : "none",
+            duration: 0.3,
+            immediateRender: false
+          });
+        }
+      });
+    });
+    
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <div ref={navRef} className="hidden  w-fit rounded-full lg:flex items-center gap-8 p-4 px-6  justify-center">
+    <div ref={navRef} className="hidden w-fit rounded-full lg:flex items-center gap-8 p-4 px-6 justify-center">
       {Object.entries(NAV_ITEMS).map(([key, items]) => (
         <div key={key} className="relative group">
           <DropdownButton title={key.charAt(0).toUpperCase() + key.slice(1)} />
@@ -302,21 +300,23 @@ const NavBar: React.FC = () => {
     if (!logoRef.current) return
     
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: logoRef.current,
-          start: "top center",
-          end: "top 400px",
-          scrub: true,
-        },
-      })
+      // Set initial opacity to 1
+      gsap.set(logoRef.current, { opacity: 1 });
       
-      tl.to(logoRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.inOut",
-      })
-    })
+      ScrollTrigger.create({
+        trigger: document.documentElement,
+        start: "top -=80px",
+        end: "+=120px",
+        onUpdate: (self) => {
+          gsap.to(logoRef.current, {
+            opacity: self.progress ? 0 : 1,
+            duration: 0.2,
+            ease: "power2.out",
+            immediateRender: false
+          });
+        }
+      });
+    });
     
     return () => ctx.revert()
   }, [])

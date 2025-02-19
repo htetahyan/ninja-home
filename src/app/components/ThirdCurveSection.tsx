@@ -6,7 +6,7 @@ const ThirdCurveSection = () => {
   return (
     <div className="relative bg-[#f7e1d2] h-fit mt-[-7px] ">
       {/* Top curve connection */}
-      <div className="w-full absolute -top-2 lg:-top-10 left-0">
+      <div className="w-full absolute z-10 -top-2 lg:-top-10 left-0">
         <Image
           alt="Curve Connector"
           src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c211cce4793_Section%20Curve%2003.svg"
@@ -26,7 +26,7 @@ const ThirdCurveSection = () => {
 export default ThirdCurveSection
 const CTASection = () => {
     return (
-      <div className="w-full px-[3vw] py-5 lg:py-10 z-10 h-fit lg:px-[10vw]  ">
+      <div className="w-full z-20 px-[3vw] lg:py-10 relative h-fit lg:px-[10vw]  ">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 px-6">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
