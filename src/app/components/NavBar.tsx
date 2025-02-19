@@ -242,7 +242,7 @@ useLayoutEffect(() => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-white z-50 pt-20 px-4 lg:hidden overflow-y-auto">
+          <div className="fixed inset-0 bg-white  text-white z-50 pt-20 px-4 lg:hidden overflow-y-auto">
             <button 
               className="absolute top-4 right-4"
               onClick={() => setIsMenuOpen(false)}
@@ -257,22 +257,22 @@ useLayoutEffect(() => {
                   className="flex items-center justify-between w-full py-2"
                   onClick={() => setActiveSection(activeSection === 'solutions' ? null : 'solutions')}
                 >
-                  <span>Solutions</span>
+                  <span className='text-black'>Solutions</span>
                   <ChevronRight className={`w-4 h-4 transition-transform ${activeSection === 'solutions' ? 'rotate-90' : ''}`} />
                 </button>
-                {activeSection === 'solutions' && (
+              
                   <div className="pl-4 space-y-2 mt-2">
-                    <Link href="/customer-experience" className="block py-2 text-gray-600">Customer Experience</Link>
-                    <Link href="/customer-conversion" className="block py-2 text-gray-600">Customer Conversion</Link>
-                    <Link href="/customer-onboarding" className="block py-2 text-gray-600">Customer Onboarding</Link>
-                    <Link href="/customer-support" className="block py-2 text-gray-600">Customer Support</Link>
-                    <Link href="/technical-customer-support" className="block py-2 text-gray-600">Technical Customer Support</Link>
-                    <Link href="/customer-renewals" className="block py-2 text-gray-600">Customer Renewals</Link>
-                    <Link href="/content-moderation" className="block py-2 text-gray-600">Content Moderation</Link>
-                    <Link href="/data-processing" className="block py-2 text-gray-600">Data Processing</Link>
-                    <Link href="/finance-accounting" className="block py-2 text-gray-600">Finance & Accounting</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Customer Experience</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Customer Conversion</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Customer Onboarding</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Customer Support</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Technical Customer Support</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Customer Renewals</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Content Moderation</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Data Processing</Link>
+                    <Link href="/" className="block py-2 text-gray-600">Finance & Accounting</Link>
                   </div>
-                )}
+               
               </div>
 
               {/* Industries Section */}
@@ -281,10 +281,10 @@ useLayoutEffect(() => {
                   className="flex items-center justify-between w-full py-2"
                   onClick={() => setActiveSection(activeSection === 'industries' ? null : 'industries')}
                 >
-                  <span>Industries</span>
+                  <span className='text-black'>Industries</span>
                   <ChevronRight className={`w-4 h-4 transition-transform ${activeSection === 'industries' ? 'rotate-90' : ''}`} />
                 </button>
-                {activeSection === 'industries' && (
+              
                   <div className="pl-4 space-y-2 mt-2">
                     <Link href="/supply-chain" className="block py-2 text-gray-600">Supply Chain & Logistics</Link>
                     <Link href="/fintech" className="block py-2 text-gray-600">Fintech</Link>
@@ -293,7 +293,7 @@ useLayoutEffect(() => {
                     <Link href="/saas" className="block py-2 text-gray-600">SaaS</Link>
                     <Link href="/ai" className="block py-2 text-gray-600">AI</Link>
                   </div>
-                )}
+           
               </div>
 
               <Link href="/how-it-works" className="block py-2">How it Works</Link>
@@ -304,13 +304,13 @@ useLayoutEffect(() => {
                   className="flex items-center justify-between w-full py-2"
                   onClick={() => setActiveSection(activeSection === 'about' ? null : 'about')}
                 >
-                  <span>About</span>
+                  <span className='text-black'>About</span>
                   <ChevronRight className={`w-4 h-4 transition-transform ${activeSection === 'about' ? 'rotate-90' : ''}`} />
                 </button>
                 {activeSection === 'about' && (
-                  <div className="pl-4 space-y-2 mt-2">
-                    <Link href="/about-us" className="block py-2 text-gray-600">About us</Link>
-                    <Link href="/careers" className="block py-2 text-gray-600">Careers</Link>
+                  <div className="pl-4 space-y-2 mt-2 text-black">
+                    <Link href="/about-us" className="block py-2 ">About us</Link>
+                    <Link href="/careers" className="block py-2 ">Careers</Link>
                   </div>
                 )}
               </div>

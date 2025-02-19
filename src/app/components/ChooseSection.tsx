@@ -85,12 +85,16 @@ const ChooseSection = () => {
 Choose as many as you need.
 
 </h4></div>
-<div className='w-full grid grid-cols-1 lg:grid-cols-6 gap-6 place-items-center '>
-    {items.map((item)=>(
-        <div key={item.name} className='w-full relative bg-white p-4  lg:h-[30vh] flex lg:flex-col lg:justify-center items-center'>
+<div className='w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 place-items-center '>
+    {items.map((item, i) => (
+        <div key={item.name} className='w-full relative h-full bg-white p-4 lg:h-[30vh] flex md:flex-col lg:justify-center items-center'>
             <div className='w-2/3 h-2/3 relative'>
-            <Image priority src={item.image} className='h-full w-auto object-contain' alt={item.name} width={200} height={300} />
-           </div> <p className='text-center font-semibold'>{item.name}</p>
+            <Image priority src={item.image} className={`h-full w-auto object-contain `} alt={item.name} width={200} height={300} />
+           </div>
+           <div className='flex items-center '>
+             <input type='checkbox' id={`checkbox-${i}`} className='mr-2 absolute top-2 right-2' />
+             <label htmlFor={`checkbox-${i}`} className='text-center font-semibold'>{item.name}</label>
+           </div>
         </div>
     ))}
 </div>
