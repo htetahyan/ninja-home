@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
-
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 const services = [
   {
     title: 'Customer Support',
@@ -73,6 +74,26 @@ const CurveSection = () => {
 export default CurveSection
 
 const Oldwoman=()=>{
+    const textRef=useRef<any>([])
+    useLayoutEffect(()=>{
+if(textRef.current){
+    const tl=gsap.timeline(
+{        ScrollTrigger:textRef.current,
+    start:'top -=400px',
+    end:'top center',  scrub: true,
+}        
+    )
+
+    tl.fromTo(textRef!.current,{
+        opacity:0,
+        y:100
+    },{
+        opacity:1,
+        y:0
+    })
+}
+
+    })
     return (
         <div className='w-full  items-center lg:min-h-screen p-5 lg:pt-[13rem]  block lg:grid lg:grid-cols-2 h-fit relative'>
             <Image 
@@ -81,8 +102,8 @@ const Oldwoman=()=>{
             alt=''
             src='https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c5b45ce4789_Character%2520Illustration__Woman%2520Watering%2520Bar%2520Chart-p-800.webp'
           />
-          <div className='w-full h-fit grid gap-5'>
-<h1 className='md:text-5xl text-3xl font-bold'>Free up resources, accelerate growth, and solve for scale.</h1>
+          <div ref={textRef} className='w-full h-fit grid gap-5 '>
+<h1 className='md:text-5xl text-3xl font-bold' >Free up resources, accelerate growth, and solve for scale.</h1>
        <h2 className='md:text-xl text-lg '  >
        At SupportNinja, we combine cutting-edge technology with value-centricity to foster high-performing, reliable teams that turn growing pains into efficient pathways to profitability.
        </h2>
@@ -99,8 +120,26 @@ const Oldwoman=()=>{
     )
 }
 const PlantSection=()=>{
+    const plantRef = useRef<any>(null);
+    useLayoutEffect(() => {
+        if (plantRef.current) {
+            gsap.fromTo(plantRef.current, {
+                opacity: 0,
+                y: 100
+            }, {
+                opacity: 1,
+                y: 0,
+                scrollTrigger: {
+                    trigger: plantRef.current,
+                    start: 'top bottom',
+                    end: 'top center',
+                    scrub: true
+                }
+            });
+        }
+    }, []);
     return(
-        <div className='grid lg:grid-cols-2 mt-10 h-fit w-full py-10  px-[3vw] lg:px-[10vw] '>
+        <div ref={plantRef} className='grid lg:grid-cols-2 mt-10 h-fit w-full py-10  px-[3vw] lg:px-[10vw] '>
             <div className='w-full h-fit  flex flex-col gap-10'>
                 <h1 className='md:text-5xl text-3xl text-start font-bold'>
                 Don’t grow it alone
@@ -117,8 +156,26 @@ const PlantSection=()=>{
     )
 }
 const ServiceSection = () => {
-  return (
-    <section className="w-full py-10">
+    const serviceRef = useRef<any>(null);
+    useLayoutEffect(() => {
+        if (serviceRef.current) {
+            gsap.fromTo(serviceRef.current, {
+                opacity: 0,
+                y: 100
+            }, {
+                opacity: 1,
+                y: 0,
+                scrollTrigger: {
+                    trigger: serviceRef.current,
+                    start: 'top bottom',
+                    end: 'top center',
+                    scrub: true
+                }
+            });
+        }
+    }, []);
+    return (
+        <div ref={serviceRef} className="w-full py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between">
@@ -132,67 +189,87 @@ const ServiceSection = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
 const CarouselSection = () => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const testimonials = [
-    {
-      quote: "SupportNinja is really responsive and flexible based on our needs. But what we’re really, really happy about is the Ninjas and their commitment to the brand. They’re like an extension of our team!",
-      author: "Sudip Dasgupta",
-      position: "Head of Customer Experience, Product Madness",
-    },
-    {
-      quote: "Their service is exceptional and always exceeds our expectations.",
-      author: "Jane Doe",
-      position: "CEO, Example Corp",
-    },
-    {
-      quote: "A reliable partner for our business needs.",
-      author: "John Smith",
-      position: "CTO, Tech Innovations",
-    },
-    {
-      quote: "Outstanding support and dedication.",
-      author: "Emily Johnson",
-      position: "COO, Business Solutions",
-    },
-  ];
+    const carouselRef = useRef<any>(null);
+    useLayoutEffect(() => {
+        if (carouselRef.current) {
+            gsap.fromTo(carouselRef.current, {
+                opacity: 0,
+                y: 100
+            }, {
+                opacity: 1,
+                y: 0,
+                scrollTrigger: {
+                    trigger: carouselRef.current,
+                    start: 'top bottom',
+                    end: 'top center',
+                    scrub: true
+                }
+            });
+        }
+    }, []);
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const testimonials = [
+        {
+          quote: "SupportNinja is really responsive and flexible based on our needs. But what we’re really, really happy about is the Ninjas and their commitment to the brand. They’re like an extension of our team!",
+          author: "Sudip Dasgupta",
+          position: "Head of Customer Experience, Product Madness",
+        },
+        {
+          quote: "Their service is exceptional and always exceeds our expectations.",
+          author: "Jane Doe",
+          position: "CEO, Example Corp",
+        },
+        {
+          quote: "A reliable partner for our business needs.",
+          author: "John Smith",
+          position: "CTO, Tech Innovations",
+        },
+        {
+          quote: "Outstanding support and dedication.",
+          author: "Emily Johnson",
+          position: "COO, Business Solutions",
+        },
+      ];
 
-  const containerRef = React.useRef(null);
+      const containerRef = React.useRef(null);
 
-  React.useEffect(() => {
-    if (containerRef.current) {
-      gsap.fromTo(
-        containerRef.current,
-        { opacity: 0, x: 50 },
-        { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }
-      );
-    }
-  }, [currentIndex]);
+      React.useEffect(() => {
+        if (containerRef.current) {
+          gsap.fromTo(
+            containerRef.current,
+            { opacity: 0, x: 50 },
+            { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }
+          );
+        }
+      }, [currentIndex]);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
-  };
+      const handlePrev = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
+      };
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
-  };
+      const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
+      };
 
-  return (
-    <section className="w-full py-10 flex flex-col items-center">
-      <h2 className="text-3xl font-bold mb-6">Why our clients stick with us</h2>
-      <div  className="bg-[#f5e7e0] w-full h-[45vh] flex items-center relative p-6 rounded-lg shadow-md max-w-3xl text-center ">
-      <div ref={containerRef} className='w-full h-2/3 flex flex-col justify-between items-center '>  <p className="text-xl italic mb-4">"{testimonials[currentIndex].quote}"</p>
-        <p className="font-semibold">{testimonials[currentIndex].author}</p>
-        <p className="text-sm text-gray-600">{testimonials[currentIndex].position}</p></div>
-        <div className="flex justify-end mt-4 absolute bottom-5 right-5">
-          <button onClick={handlePrev} className="p-2 bg-[#2d2d2d] text-white ">←</button>
-          <button onClick={handleNext} className="p-2 bg-[#2d2d2d] text-white">→</button>
+      return (
+        <div ref={carouselRef} className='w-full h-fit grid gap-5'>
+        <section className="w-full py-10 flex flex-col items-center">
+          <h2 className="text-3xl font-bold mb-6">Why our clients stick with us</h2>
+          <div  className="bg-[#f5e7e0] w-full h-[45vh] flex items-center relative p-6 rounded-lg shadow-md max-w-3xl text-center ">
+          <div ref={containerRef} className='w-full h-2/3 flex flex-col justify-between items-center '>  <p className="text-xl italic mb-4">"{testimonials[currentIndex].quote}"</p>
+            <p className="font-semibold">{testimonials[currentIndex].author}</p>
+            <p className="text-sm text-gray-600">{testimonials[currentIndex].position}</p></div>
+            <div className="flex justify-end mt-4 absolute bottom-5 right-5">
+              <button onClick={handlePrev} className="p-2 bg-[#2d2d2d] text-white ">←</button>
+              <button onClick={handleNext} className="p-2 bg-[#2d2d2d] text-white">→</button>
+            </div>
+          </div>
+        </section>
         </div>
-      </div>
-    </section>
-  );
+      );
 };

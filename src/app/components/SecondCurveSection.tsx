@@ -1,37 +1,10 @@
 'use client'
 import Image from 'next/image'
-import React, { useState, useLayoutEffect, useRef } from 'react'
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
-// Register ScrollTrigger
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import React, { useState } from 'react'
 
 const SecondCurveSection = () => {
-  const sectionRef = useRef(null);
-
-  useLayoutEffect(() => {
-    const element = sectionRef.current;
-    gsap.fromTo(
-      element,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: element,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          scrub: true,
-        },
-      }
-    );
-  }, []);
-
   return (
-    <div ref={sectionRef} className="relative bg-[#bfc1b9] h-fit mt-[-7px] ">
+    <div className="relative bg-[#bfc1b9] h-fit mt-[-7px] ">
       {/* Top curve connection */}
       <div className="w-full absolute -top-2 lg:-top-10 left-0">
         <Image
@@ -39,6 +12,7 @@ const SecondCurveSection = () => {
           src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c7976ce4795_Section%20Curve%2002.svg"
           width={1920}
           height={500}
+          
           className="w-full object-cover"
         />
       </div>
@@ -299,7 +273,9 @@ const PassionateSection = () => {
             
             {/* Decorative icon overlay */}
             <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-2xl bg-rose-100 flex items-center justify-center">
-              <div className="w-20 h-20 bg-red-400 rounded-full"></div>
+              <div className="w-20 h-20 bg-red-400">
+                {/* Icon placeholder */}
+              </div>
             </div>
           </div>
   
