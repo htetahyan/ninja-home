@@ -260,7 +260,7 @@ const CarouselSection = () => {
         <div ref={carouselRef} className='w-full h-fit grid gap-5'>
         <section className="w-full py-10 flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-6">Why our clients stick with us</h2>
-          <div  className="bg-[#f5e7e0] w-full h-[45vh] flex items-center relative p-6 rounded-lg shadow-md max-w-3xl text-center ">
+          <div  className="bg-[#f5e7e0] w-full h-[50vh] py-8 md:py-8 flex items-center relative p-6 rounded-lg shadow-md max-w-3xl text-center ">
           <div ref={containerRef} className='w-full h-2/3 flex flex-col justify-between items-center '>  <p className="text-xl italic mb-4">"{testimonials[currentIndex].quote}"</p>
             <p className="font-semibold">{testimonials[currentIndex].author}</p>
             <p className="text-sm text-gray-600">{testimonials[currentIndex].position}</p></div>
