@@ -57,7 +57,7 @@ const CurveSection = () => {
       className="w-full object-cover z-20"
     />
   </div>
-      <div className='w-full h-fit lg:pb-20  pb-10  bg-white px-[3vw] lg:px-[10vw]'>
+      <div className='w-full h-fit lg:pb-20  pb-10  bg-white px-[5vw] lg:px-[10vw]'>
   <Oldwoman/>
   <PlantSection/>
   <ServiceSection/>
@@ -101,7 +101,7 @@ if(textRef.current){
 
     })
     return (
-        <div className='w-full  items-center lg:min-h-screen p-5 lg:pt-[13rem]  block lg:grid lg:grid-cols-2 h-fit relative'>
+        <div className='w-full  items-center lg:min-h-screen  lg:pt-[13rem]  block lg:grid lg:grid-cols-2 h-fit relative'>
             <Image 
             width={400}
             height={300}
@@ -176,6 +176,7 @@ const ServiceSection = () => {
                     start: 'top bottom',
                     end: 'top center',
                     scrub: true
+                    
                 }
             });
         }
@@ -184,7 +185,7 @@ const ServiceSection = () => {
         <div ref={serviceRef} className="w-full py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between">
+          <div key={index} className="bg-white py-6 lg:px-6 rounded-lg shadow-md flex flex-col justify-between">
             <div>
             <service.icon className='text-md mb-2'/>
               <h3 className="text-xl font-bold mb-2">{service.title}</h3>
@@ -219,64 +220,73 @@ const CarouselSection = () => {
             });
         }
     }, []);
+
     const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [direction, setDirection] = React.useState("next"); // Tracks direction
+
     const testimonials = [
         {
-          quote: "SupportNinja is really responsive and flexible based on our needs. But what we’re really, really happy about is the Ninjas and their commitment to the brand. They’re like an extension of our team!",
-          author: "Sudip Dasgupta",
-          position: "Head of Customer Experience, Product Madness",
+            quote: "SupportNinja is really responsive and flexible based on our needs. But what we’re really, really happy about is the Ninjas and their commitment to the brand. They’re like an extension of our team!",
+            author: "Sudip Dasgupta",
+            position: "Head of Customer Experience, Product Madness",
         },
         {
-          quote: "Their service is exceptional and always exceeds our expectations.",
-          author: "Jane Doe",
-          position: "CEO, Example Corp",
+            quote: "I love the communication and transparency they provide, especially during the project. It gets handled very efficiently. Thank you SupportNinja!",
+            author: "Jane Doe",
+            position: "CEO, Example Corp",
         },
         {
-          quote: "A reliable partner for our business needs.",
-          author: "John Smith",
-          position: "CTO, Tech Innovations",
+            quote: "Great support and dedication from the team. They are always available to help and go the extra mile. Very responsive to our needs. Thank you SupportNinja!",
+            author: "John Smith",
+            position: "CTO, Tech Innovations",
         },
         {
-          quote: "Outstanding support and dedication.",
-          author: "Emily Johnson",
-          position: "COO, Business Solutions",
+            quote: "Outstanding support and dedication. They are very flexible and provide just the right amount of support when needed. Very professional and very quick to respond.",
+            author: "Emily Johnson",
+            position: "COO, Business Solutions",
         },
-      ];
+    ];
 
-      const containerRef = React.useRef(null);
+    const containerRef = React.useRef(null);
 
-      React.useEffect(() => {
+    React.useEffect(() => {
         if (containerRef.current) {
-          gsap.fromTo(
-            containerRef.current,
-            { opacity: 0, x: 50 },
-            { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }
-          );
+            gsap.fromTo(
+                containerRef.current,
+                { opacity: 0, x: direction === "next" ? 50 : -50 }, // Direction-based animation
+                { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }
+            );
         }
-      }, [currentIndex]);
+    }, [currentIndex, direction]);
 
-      const handlePrev = () => {
+    const handlePrev = () => {
+        setDirection("prev"); // Set direction before updating index
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
-      };
+    };
 
-      const handleNext = () => {
+    const handleNext = () => {
+        setDirection("next"); // Set direction before updating index
         setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
-      };
+    };
 
-      return (
+    return (
         <div ref={carouselRef} className='w-full h-fit grid gap-5'>
-        <section className="w-full py-10 flex flex-col items-center">
-          <h2 className="text-3xl font-bold mb-6">Why our clients stick with us</h2>
-          <div  className="bg-[#f5e7e0] w-full h-[50vh] py-8 md:py-8 flex items-center relative p-6 rounded-lg shadow-md max-w-3xl text-center ">
-          <div ref={containerRef} className='w-full h-2/3 flex flex-col justify-between items-center '>  <p className="text-xl italic mb-4">"{testimonials[currentIndex].quote}"</p>
-            <p className="font-semibold">{testimonials[currentIndex].author}</p>
-            <p className="text-sm text-gray-600">{testimonials[currentIndex].position}</p></div>
-            <div className="flex justify-end mt-4 absolute bottom-5 right-5">
-              <button onClick={handlePrev} className="p-2 bg-[#2d2d2d] text-white ">←</button>
-              <button onClick={handleNext} className="p-2 bg-[#2d2d2d] text-white">→</button>
-            </div>
-          </div>
-        </section>
+            <section className="w-full py-10 flex flex-col items-center">
+                <h2 className="text-3xl font-bold mb-6">Why our clients stick with us</h2>
+                <div className='w-full flex flex-col justify-between bg-[#f5e7e0] py-8 md:py-8 p-6 rounded-lg h-[50vh]'>
+                    <div className="w-full flex items-center relative max-w-3xl text-center">
+                        <div ref={containerRef} className='w-full h-fit flex flex-col justify-between items-center'>
+                            <p className="text-xl italic mb-4">"{testimonials[currentIndex].quote}"</p>
+                            <p className="font-semibold">{testimonials[currentIndex].author}</p>
+                            <p className="text-sm text-gray-600">{testimonials[currentIndex].position}</p>
+                        </div>
+                    </div>
+                    <div className="flex mt-4 mx-auto bottom-5 right-5 bg-[#2d2d2d] w-fit p-2 rounded-full">
+                        <button onClick={handlePrev} className="p-2 bg-[#2d2d2d] text-white border-r-2">←</button>
+                        <button onClick={handleNext} className="p-2 bg-[#2d2d2d] text-white">→</button>
+                    </div>
+                </div>
+            </section>
         </div>
-      );
+    );
 };

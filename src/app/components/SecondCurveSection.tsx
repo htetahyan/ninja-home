@@ -25,7 +25,7 @@ const SecondCurveSection = () => {
           fill
           alt="Globe Lines"
           src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c0fc8ce4798_Globe%20Lines.svg"
-          className="object- lg:object-contain"
+          className="object-cover lg:object-contain"
         />
 
         {/* Profile images positioned along curves */}
@@ -108,13 +108,13 @@ const ApproachSection = () => {
   ];
 
   return (
-    <div className="w-full min-h-[60vh] lg:min-h-screen p-12">
+    <div className="w-full min-h-[60vh] lg:min-h-screen px-[5vw] lg:px-[10vw] py-10 ">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
         <div className="flex flex-col h-full justify-center">
-          <h1 className="text-3xl md:text-5xl  font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl md:text-5xl  font-bold text-black mb-6">
             Our customized approach
           </h1>
-          <p className="text-xl md:2xl text-gray-700">
+          <p className="text-xl md:2xl text-black">
             We tailor our strategies and services based on your roadblocks and needs, delivering a strategic outsourcing playbook — inclusive of technology, talent, and timing — that drives your business forward.
           </p>
         </div>
@@ -149,19 +149,22 @@ const ApproachSection = () => {
           <div className="flex flex-col gap-8">
             {activeTab === 'management' 
               ? steps.map((step) => (
-                  <div key={step.number} className="flex items-start gap-4">
+                  <div key={step.number} className="flex items-start gap-4 relative">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center">
                       {step.number}
                     </div>
                     <p className="text-gray-700 pt-1">{step.content}</p>
+                  <div className={`w-1 h-full bg-gray-200 absolute left-3 top-8 ${step.number===5 ? 'hidden' : ''}`}/>
                   </div>
                 ))
               : talentSteps.map((step) => (
-                  <div key={step.number} className="flex items-start gap-4">
+                  <div key={step.number} className="flex items-start gap-4 relative">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white text-gray-900 flex items-center justify-center">
                       {step.number}
                     </div>
                     <p className="text-gray-700 pt-1">{step.content}</p>
+                    <div className={`w-1 h-full bg-gray-200 absolute left-3 top-8 ${step.number===5 ? 'hidden' : ''}`}/>
+
                   </div>
                 ))
             }
@@ -179,7 +182,7 @@ const ApproachSection = () => {
 const PassionateSection = () => {
 useLayoutEffect(()=>{})
     return (
-      <div className="w-full bg-gray-50 py-24">
+      <div className="w-full bg-gray-50 py-14 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 px-6">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
@@ -266,7 +269,7 @@ useLayoutEffect(()=>{})
           {/* Left side with images */}
           <div className="relative">
             {/* Main image */}
-            <div className="relative w-2/3 aspect-square rounded-2xl overflow-hidden">
+            <div className="relative w-full lg:w-2/3 aspect-square rounded-2xl overflow-hidden">
               <Image 
                 src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c7fc2ce4791_Stock%2520Image__Conference%2520Room-p-500.webp"
                 alt="Team meeting in conference room"
