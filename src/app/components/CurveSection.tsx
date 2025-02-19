@@ -139,7 +139,7 @@ const PlantSection=()=>{
         }
     }, []);
     return(
-        <div ref={plantRef} className='grid lg:grid-cols-2 mt-10 h-fit w-full py-10  px-[3vw] lg:px-[10vw] '>
+        <div ref={plantRef} className='grid lg:grid-cols-2 mt-10 h-fit w-full py-10  '>
             <div className='w-full h-fit  flex flex-col gap-10'>
                 <h1 className='md:text-5xl text-3xl text-start font-bold'>
                 Don’t grow it alone

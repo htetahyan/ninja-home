@@ -11,7 +11,13 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+
       },
+      fontFamily:{
+        geistSans: ["GeistVF", "sans-serif"],
+        geistMono: ["GeistMonoVF", "monospace"],
+        ivyPresto: ['var(--ivy-presto-headline)', 'sans-serif'],
+      }
     },
   },
   plugins: [],

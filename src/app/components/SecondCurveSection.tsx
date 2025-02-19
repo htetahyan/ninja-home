@@ -1,7 +1,9 @@
 'use client'
 import Image from 'next/image'
-import React, { useState } from 'react'
-
+import React, { useLayoutEffect, useState } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 const SecondCurveSection = () => {
   return (
     <div className="relative bg-[#bfc1b9] h-fit mt-[-7px] ">
@@ -109,7 +111,7 @@ const ApproachSection = () => {
     <div className="w-full min-h-[60vh] lg:min-h-screen p-12">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
         <div className="flex flex-col h-full justify-center">
-          <h1 className="text-3xl md:text-5xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl md:text-5xl  font-bold text-gray-900 mb-6">
             Our customized approach
           </h1>
           <p className="text-xl md:2xl text-gray-700">
@@ -164,6 +166,9 @@ const ApproachSection = () => {
                 ))
             }
           </div>
+          <button className="flex items-center mt-5 md:mt-10 gap-2 bg-[#0C3A23] text-white px-6 py-3 rounded-full w-fit hover:bg-red-600 transition-colors">
+            Get started
+          </button>
         </div>
       </div>
     </div>
@@ -172,6 +177,7 @@ const ApproachSection = () => {
 
 
 const PassionateSection = () => {
+useLayoutEffect(()=>{})
     return (
       <div className="w-full bg-gray-50 py-24">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 px-6">
@@ -215,7 +221,7 @@ const PassionateSection = () => {
             <div className="absolute top-0 right-0 w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-200">
               <div className="relative w-full h-full">
                 <Image 
-                  src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c1677ce47c0_Tile__Man-p-500.png"
+                  src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cf161ce47c1_Tile__Woman-p-500.png"
                   alt="Team member 2"
                   fill
                   className="object-cover"
@@ -234,7 +240,7 @@ const PassionateSection = () => {
             <div className="absolute top-1/3 mt-4 left-1/3 ml-4 w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-200">
               <div className="relative w-full h-full">
                 <Image 
-                  src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c1677ce47c0_Tile__Man-p-500.png"
+                  src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c141ace47c2_Tile__Man%25202-p-500.png"
                   alt="Team member 3"
                   fill
                   className="object-cover"

@@ -3,10 +3,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import LenisScroller from "./components/lenixScroller";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const ivyPresto = localFont({
+  src: "./fonts/ivy-presto-headline.otf",
+  variable: "--ivy-presto-headline",
   weight: "100 900",
 });
 const geistMono = localFont({
@@ -28,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ivyPresto.variable} ${geistMono.variable} font-sans`}
       >
         <LenisScroller>
         <div className="">
