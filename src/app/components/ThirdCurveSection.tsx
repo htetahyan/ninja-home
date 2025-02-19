@@ -26,7 +26,7 @@ const ThirdCurveSection = () => {
 export default ThirdCurveSection
 const CTASection = () => {
     return (
-      <div className="w-full px-[3vw] py:5 lg:py-10 z-10 h-fit lg:px-[10vw]  ">
+      <div className="w-full px-[3vw] py-5 lg:py-10 z-10 h-fit lg:px-[10vw]  ">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 px-6">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
