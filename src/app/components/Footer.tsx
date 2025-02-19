@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 h-screen md:h-[90vh] lg:h-screen flex flex-col justify-between py-5 px-[3vw] md:px-[10vw]">
+    <footer className="bg-gray-200 h-screen flex flex-col justify-between py-5 px-[3vw] md:px-[10vw]">
       <div className='w-full flex flex-col h-1/5 relative justify-between  mb-4'>
        <div className='w-full flex justify-between items-center'> <Image src={Logo} width={200} height={100} className="h-8 w-auto mb-4 lg:mb-0" alt=''/>
         <Link 
@@ -18,10 +18,10 @@ const Footer = () => {
         <div className='h-0.5 bg-black w-full absolute  bottom-0'/>
       </div>
       <div className="container mx-auto">
-        <div className="grid grid-cols-2   md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2   md:grid-cols-6 gap-4">
           <div>
-            <h3 className="font-bold mb-2 text-md md:text-2xl">Solutions</h3>
-            <ul className="space-y-1 text-sm md:text-xl font-bold">
+            <h3 className="font-bold mb-2">Solutions</h3>
+            <ul className="space-y-1 text-sm font-bold">
               <li>Customer Experience</li>
               <li>Customer Conversion</li>
               <li>Customer Onboarding</li>
@@ -34,8 +34,8 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-2 text-md md:text-2xl">Industries</h3>
-            <ul className="space-y-1 text-sm md:text-xl font-bold">
+            <h3 className="font-bold mb-2">Industries</h3>
+            <ul className="space-y-1 text-sm font-bold">
               <li>SaaS</li>
               <li>AI</li>
               <li>Ecommerce</li>
@@ -45,8 +45,8 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-2 text-md md:text-2xl">Resources</h3>
-            <ul className="space-y-1 text-sm md:text-xl font-bold">
+            <h3 className="font-bold mb-2">Resources</h3>
+            <ul className="space-y-1 text-sm  font-bold">
               <li>Resources</li>
               <li>FAQs</li>
               <li>Glossary</li>
@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-bold mb-2">Company</h3>
-            <ul className="space-y-1 text-sm md:text-xl font-bold">
+            <ul className="space-y-1 text-sm font-bold">
               <li>How it Works</li>
               <li>About</li>
               <li>Careers</li>
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-bold mb-2">Follow</h3>
-            <ul className="space-y-1 text-sm md:text-xl font-bold">
+            <ul className="space-y-1 text-sm font-bold">
               <li>LinkedIn</li>
               <li>YouTube</li>
               <li>Twitter</li>
