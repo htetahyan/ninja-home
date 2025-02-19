@@ -186,7 +186,8 @@ const ServiceSection = () => {
         <div ref={serviceRef} className="w-full py-6 lg:py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <div key={index} className="bg-white py-6 lg:px-6 rounded-lg shadow-md flex flex-col justify-between">
+          <div key={index} className="bg-white py-6  rounded-lg relative flex flex-col justify-between">
+          <div className='w-[90%] h-0.5 absolute bottom-0 bg-gray-100'/>
             <div>
             <service.icon className='text-md mb-2'/>
               <h3 className="text-xl font-bold mb-2">{service.title}</h3>

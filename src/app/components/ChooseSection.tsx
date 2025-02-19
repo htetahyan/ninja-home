@@ -78,17 +78,17 @@ const ChooseSection = () => {
     }, []);
     
   return (
-    <section className='w-full mt-10 flex gap-6 flex-col h-fit  justify-around items-center '>
+    <section className='w-full mt-10 flex gap-6 flex-col h-fit   justify-around items-center '>
    <div> <h2 className='text-center text-xl md:text-3xl font-semibold'>Which outsourcing solutions are you looking for?
     </h2>
 <h4 className='text-center text-md md:text-xl'>
 Choose as many as you need.
 
 </h4></div>
-<div className='w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 place-items-center '>
+<div className='w-full h-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 place-items-center '>
     {items.map((item, i) => (
-        <div key={item.name} className='w-full relative  h-[15vh] bg-white p-4 lg:h-[30vh] flex md:flex-col lg:justify-center items-center'>
-            <div className='w-2/3 h-full lg:h-2/3 relative'>
+        <div key={item.name} className='w-full relative   h-[15vh] bg-white p-4 lg:h-[30vh] flex md:flex-col md:justify-center items-center'>
+            <div className='w-2/3 mx-auto h-full md:h-2/3 relative'>
             <Image priority src={item.image} className={`h-full w-auto object-contain `} alt={item.name} width={200} height={300} />
            </div>
            <div className='flex justify-between md:items-center w-full '>
