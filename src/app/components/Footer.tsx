@@ -18,7 +18,7 @@ const Footer = () => {
         <div className='h-0.5 bg-black w-full absolute  bottom-0'/>
       </div>
       <div className="container mx-auto">
-        <div className="grid grid-cols-2   md:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2  md:grid-cols-3  lg:grid-cols-6 gap-4">
           <div>
             <h3 className="font-bold mb-2">Solutions</h3>
             <ul className="space-y-1 text-sm font-bold">
