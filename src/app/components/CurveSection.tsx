@@ -126,7 +126,7 @@ const ServiceSection = () => {
               <h3 className="text-xl font-bold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
             </div>
-            <a href="#" className="text-blue-500 flex items-center font-semibold">
+            <a href="#" className="text-black flex items-center font-semibold">
               {service.link} <ArrowRight className="ml-2" />
             </a>
           </div>

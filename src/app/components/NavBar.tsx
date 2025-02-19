@@ -247,7 +247,7 @@ useLayoutEffect(() => {
               className="absolute top-4 right-4"
               onClick={() => setIsMenuOpen(false)}
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-black" />
             </button>
 
             <div className="space-y-4">
@@ -307,12 +307,12 @@ useLayoutEffect(() => {
                   <span className='text-black'>About</span>
                   <ChevronRight className={`w-4 h-4 transition-transform ${activeSection === 'about' ? 'rotate-90' : ''}`} />
                 </button>
-                {activeSection === 'about' && (
+              
                   <div className="pl-4 space-y-2 mt-2 text-black">
                     <Link href="/about-us" className="block py-2 ">About us</Link>
                     <Link href="/careers" className="block py-2 ">Careers</Link>
                   </div>
-                )}
+               
               </div>
 
               <Link href="/resources" className="block py-2">Resources</Link>
