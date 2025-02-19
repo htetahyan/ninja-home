@@ -198,7 +198,7 @@ const images = [
   const colorBlocks = ["bg-red-400", "bg-rose-300", "bg-yellow-400"];
   
   const ImageTile = ({ src, alt, className, width, height }:any) => (
-    <div className={`absolute ${className} w-24 h-24 md:w-28 md:h-28 lg:w-48 lg:h-48 rounded-xl bg-gray-200 shadow-md`}>
+    <div className={`absolute ${className} w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-xl bg-gray-200 shadow-md`}>
       <Image
         src={src}
         alt={alt}
