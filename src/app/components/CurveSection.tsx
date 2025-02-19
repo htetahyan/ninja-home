@@ -103,7 +103,7 @@ if(textRef.current){
             src='https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c5b45ce4789_Character%2520Illustration__Woman%2520Watering%2520Bar%2520Chart-p-800.webp'
           />
           <div ref={textRef} className='w-full h-fit grid gap-5 '>
-<h1 className='md:text-5xl text-3xl font-bold' >Free up resources, accelerate growth, and solve for scale.</h1>
+<h1 className='md:text-5xl text-4xl font-bold' >Free up resources, accelerate growth, and solve for scale.</h1>
        <h2 className='md:text-xl text-lg '  >
        At SupportNinja, we combine cutting-edge technology with value-centricity to foster high-performing, reliable teams that turn growing pains into efficient pathways to profitability.
        </h2>
@@ -150,7 +150,7 @@ const PlantSection=()=>{
                 </h2>
                 <h2 className='md:text-xl text-lg '>Your dedicated new team members will become experts in your world — your customers, your tech, your data, your systems — so they can expand on what you’ve built.</h2>
             </div>
-            <Image width ={100} height={100} className='place-self-center' src='https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c4794ce4765_Illustration%3DPlant%201.svg'
+            <Image width ={100} height={100} className=' row-start-1 md:col-start-2' src='https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c4794ce4765_Illustration%3DPlant%201.svg'
             alt=''/>
         </div>
     )

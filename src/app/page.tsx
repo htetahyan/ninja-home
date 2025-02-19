@@ -17,10 +17,10 @@ const brands=[
 const page = () => {
   return (
     <div className='w-full z-0 '>
-      <div className='w-full  relative '>
+      <div className='w-full  relative px-[5vw] lg:px-[10vw]'>
     <FirstSection/>
      <ChooseSection/>
-     <div className="bg-[#bfc1b9] mx-auto lg:justify-around p-6 lg:p-10 rounded-2xl lg:w-[90%] mt-5 lg:mt-10 h-fit flex flex-col lg:flex-row items-center text-center">
+     <div className="bg-[#bfc1b9] mx-auto lg:justify-around  p-6 lg:p-10 rounded-2xl lg:w-[90%] mt-5 lg:mt-10 h-fit flex flex-col  lg:flex-row items-center text-center">
       <h2 className="text-xl md:text-2xl lg:text-3xl lg:w-2/5 font-medium text-[#333] lg:mb-0 mb-6">
         Driving better business results for <br className="hidden sm:block" /> 200+ companies.
       </h2>

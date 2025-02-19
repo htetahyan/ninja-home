@@ -78,10 +78,10 @@ const ChooseSection = () => {
     }, []);
     
   return (
-    <section className='w-full mt-10 flex gap-6 flex-col h-fit  justify-around items-center px-[3vw] lg:px-[10vw]'>
-   <div> <h2 className='text-center text-2xl md:text-3xl font-semibold'>Which outsourcing solutions are you looking for?
+    <section className='w-full mt-10 flex gap-6 flex-col h-fit  justify-around items-center '>
+   <div> <h2 className='text-center text-xl md:text-3xl font-semibold'>Which outsourcing solutions are you looking for?
     </h2>
-<h4 className='text-center text-xl'>
+<h4 className='text-center text-md md:text-xl'>
 Choose as many as you need.
 
 </h4></div>
@@ -91,15 +91,16 @@ Choose as many as you need.
             <div className='w-2/3 h-full lg:h-2/3 relative'>
             <Image priority src={item.image} className={`h-full w-auto object-contain `} alt={item.name} width={200} height={300} />
            </div>
-           <div className='flex items-center w-full '>
-             <input type='checkbox' id={`checkbox-${i}`} className='mr-2 absolute top-2 right-2' />
+           <div className='flex justify-between md:items-center w-full '>
              <label htmlFor={`checkbox-${i}`} className='text-center font-semibold'>{item.name}</label>
+             <input type='checkbox' id={`checkbox-${i}`} className='mr-2 lg:absolute top-2 right-2' />
+
            </div>
         </div>
     ))}
 </div>
 <div className='w-full flex gap-6 justify-center'>
-<button ref={buttonRef} className='w-full px-2  lg:max-w-[20vw] flex items-center justify-between  bg-[#ee4b4a] hover:bg-black text-white p-2 text-2xl font-bold rounded-full '>Get Started
+<button ref={buttonRef} className='w-full px-4  lg:max-w-[20vw] flex items-center justify-between  bg-[#ee4b4a] hover:bg-black text-white p-2 text-2xl font-bold rounded-full '>Get Started
   <div className='p-4 bg-white rounded-full flex items-center justify-center relative overflow-hidden'> <ArrowRight ref={arrowRef} className='text-[#ee4b4a]' /></div> 
 </button>
 </div>

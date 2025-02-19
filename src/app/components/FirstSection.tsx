@@ -41,10 +41,10 @@ const FirstSection = () => {
   }, [])
 
   return (
-    <section className="w-full relative flex flex-col gap-6 justify-center h-[60vh] lg:h-[70vh] items-center">
-      <h2 ref={textRef} className='text-center md:text-3xl text-xl font-bold lg:w-[65vw] leading-normal lg:leading-relaxed'>Quickly and seamlessly scale your team with agile, highly customizable outsourcing solutions that power your growth.
+    <section className="w-full relative flex flex-col gap-6 justify-center h-[40vh] lg:h-[70vh]  items-center">
+      <h2 ref={textRef} className='text-center md:text-3xl text-lg font-semibold lg:w-[65vw] leading-normal lg:leading-relaxed'>Quickly and seamlessly scale your team with agile, highly customizable outsourcing solutions that power your growth.
 </h2>
-      <h3 ref={textRef2} className='text-center  lg:text-8xl text-5xl font-bold'>Outsourcing worth talking about
+      <h3 ref={textRef2} className='text-center  lg:text-8xl text-4xl font-bold'>Outsourcing worth talking about
 </h3>
       <div className='w-full  h-0.5 absolute bottom-0 bg-[#d6cec3] ' />
 
